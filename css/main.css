@@ -1,29 +1,85 @@
 * {
-    background:rgb(33, 206, 236);
+    background:rgb(188, 232, 235);
     padding: 0;
     margin: 0;
 }
+
 h1 {
     text-align: center;
     padding: 7px 0 14px 0;
     color: white;
+    background: rgb(33, 206, 236);
 }
 
+article {
+    margin: 7px 70px 0 70px;
+    box-sizing: border-box;
+}
  .line {
     background:rgb(192, 228, 235);
     height: 3px;
-    width: 470px;
-    margin-left: 35px;
+    width: 535px;
  }
- 
-#container1 p{
+
+ div.container1 {
+     display: inline-block;
+ }
+.container1 p{
     background-color: white;
-    margin: 0px 35px;
     padding: 14px 21px;
-    width: 430px;
+    width: 500px;
 
 }
 
 .blue {
     color: blue;
+    font-weight: 700;
 }
+
+/*estilos del segundo div*/
+
+.btn {
+  background-color: rgb(39, 215, 238);
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  display: block;
+  outline: none;
+  padding: 12px 28px;
+  margin: 21px 0 4px 10px ;;
+}
+
+.btn:hover {
+    background-color: #a09c9c;
+}
+div.container2{
+    display: inline-block;
+    margin-left: 35px;
+    background-color: white;
+}
+/*la etiqueta textarea viene con row y col para definir alto y
+ancho(cantidad de columnas y filas), sin embargo es mejor definirlo
+en CSS porque son estilos*/
+textarea {
+  height: 145px;
+  width: 540px;
+  background-color: white;
+  border-color:white;
+  border: none;
+  padding: 11px;
+  box-sizing: border-box;
+}
+
+
+/*salida del texto en la pantalla*/
+.outText{
+  background:white;
+  color:black;
+  width:98%;
+  height:auto;
+  border:none;
+  border-radius: 4px;
+  margin:28px 0 4px 0;
+  box-sizing: border-box;
+}
+
