@@ -77,20 +77,7 @@ div.container1 {
 
 /*estilos del segundo div*/
 
-.btn {
-  background-color: rgba(39, 218, 238, 0.555);
-  border: none;
-  border-radius: 5px;
-  color: #ffffffee;
-  display: block;
-  outline: none;
-  padding: 12px 28px;
-  margin: 21px 0 4px 10px ;;
-}
 
-.btn:hover {
-    background-color: #a09c9c;
-}
 
 div.container2{
     position:relative;
@@ -109,6 +96,26 @@ div.container2{
   padding: 11px;
   box-sizing: border-box;
 }
+
+.btn {
+    background-color: rgba(39, 218, 238, 0.555);
+    border: none;
+    border-radius: 5px;
+    color: #ffffffee;
+    display: block;
+    outline: none;
+    padding: 12px 28px;
+    margin: 21px 0 4px 10px ;;
+  }
+  
+  .btn:hover {
+      background-color: #a09c9c;
+  }
+
+  .cont {
+      float: right;
+      font-size:21px; 
+  }
 
 /*salida del mensaje  en la pantalla*/
 .outText{

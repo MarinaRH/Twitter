@@ -41,4 +41,28 @@ boton.addEventListener('click',function(event){
     }else {
           event.target.disabled = false;
          }
-})
+});
+
+var contador = document.getElementById('contador');
+var caracterMax= 140;
+
+area.addEventListener('keyup', Contador);
+function Contador(event) {
+    // si no existe, se asigna MAX
+    // si existe se habilita el boton y se resta el max con la longitud
+    // if (event.target.value) {
+    if (event.target.value != '') {
+      //tweetBtnActive(true);
+      var caracterWrites= event.target.value.length;
+      var total = caracterMax - caracterWrites;      
+      contador.textContent = total;
+      //changeColor(total);
+      // checkEnters(event);
+      // checkLong(event);
+      /* if (event.keyCode === 13)
+        event.target.rows = event.target.rows + 1; */
+    } else {
+      //tweetBtnActive(false);
+      //contador.textContent = caracterMax;
+    }
+  }
