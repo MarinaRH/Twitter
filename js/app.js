@@ -1,33 +1,44 @@
 //creando primer contenedor
 var container1 = document.querySelector('.container1');
-var text = document.createElement('p');
-var text2 = document.createElement('div');
-var text3 = document.createElement('p');
-   text.innerHTML = '<br> Reto de Código <br> <br> Hola, <br> Soy front-end Developer jr. <br> <br>';
-   text3.innerHTML = '<br> CÓDIGO <br> <br> ';
-   text2.classList.add('line');
-   text3.classList.add('blue');
-   container1.appendChild(text);
-   container1.appendChild(text2);
-   container1.appendChild(text3);
+var portada = document.createElement('div');
+var imagen = document.createElement('img');
+var parraf = document.createElement('div');
+var text = document.createElement('span');
+
+   text.innerHTML = 'Marina Rodriguez, <br>Front-end Developer jr. <br> @marina1717 <br> <br>';
+   imagen.src=('assets/images/marina.jpg');
+   //agregando las clases de css
+   portada.classList.add('portada');
+   imagen.classList.add('img-perfil');
+   parraf.classList.add('parraf');
+   text.classList.add('text');
+
+   container1.appendChild(portada);
+   container1.appendChild(imagen);
+   container1.appendChild(parraf);
+   parraf.appendChild(text);
 
 
-// creando el segundo contenedor
+// creando el  contenedor de los mensajes Impresos
 var area = document.getElementById('insert-text');
 var boton = document.getElementById('tweet');
-var lista = document.getElementById('container-text');
+var messages = document.getElementById('container-text');
 
 boton.addEventListener('click',function(event){
-    if(area.value){
-       var parrafo = document.createElement('textarea');
+    event.preventDefault();
+    if(area.value != ''){
+       var parrafo = document.createElement('div');
        var texto = document.createElement('p');
-
-       parrafo.textContent=area.value;
+      
+       texto.innerHTML = area.value + '<br> <br>' + '<i> Publicado: ' + moment().format('LTS') + '</i>';
        parrafo.classList.add('outText');
-       lista.classList.add('out')
-
+       
        parrafo.appendChild(texto);
-       lista.appendChild(parrafo);
+       messages.appendChild(parrafo);
+
        area.value = '';
-    }
+       area.focus();
+    }else {
+          event.target.disabled = false;
+         }
 })
