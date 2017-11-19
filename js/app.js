@@ -12,7 +12,7 @@ var text = document.createElement('span');
    imagen.classList.add('img-perfil');
    parraf.classList.add('parraf');
    text.classList.add('text');
-
+  // agregando hjo con padres
    container1.appendChild(portada);
    container1.appendChild(imagen);
    container1.appendChild(parraf);
@@ -24,6 +24,7 @@ var area = document.getElementById('insert-text');
 var boton = document.getElementById('tweet');
 var messages = document.getElementById('container-text');
 
+//funcion para publicar tweets
 boton.addEventListener('click',function(event){
     event.preventDefault();
     if(area.value != ''){
@@ -43,6 +44,7 @@ boton.addEventListener('click',function(event){
          }
 });
 
+//para el contador
 var contador = document.getElementById('contador');
 var caracterMax= 140;
 
@@ -56,13 +58,45 @@ function Contador(event) {
       var caracterWrites= event.target.value.length;
       var total = caracterMax - caracterWrites;      
       contador.textContent = total;
+      
+      colorCont(total);
       //changeColor(total);
       // checkEnters(event);
       // checkLong(event);
       /* if (event.keyCode === 13)
         event.target.rows = event.target.rows + 1; */
     } else {
+        
       //tweetBtnActive(false);
       //contador.textContent = caracterMax;
     }
+}
+  
+
+  
+function colorCont(total) {
+    // if(total < 0) {
+    //   tweetBtnActive(false);
+    //   count.classList.add('red');
+    //   count.classList.remove('orangered', 'greenyellow', 'seagreen');
+    //   return;
+    // }
+    switch (true) {
+      case (total < 0): // cuando se supera el max
+      contador.classList.add('red');
+      contador.classList.remove('orangered', 'greenyellow', 'seagreen');
+        break;
+      case (total <= 10): // a 10 chars del max
+      contador.classList.add('orangered');
+      contador.classList.remove('red', 'greenyellow', 'seagreen');
+        break;
+      case (total <= 20): // a 20 chars del max
+      contador.classList.add('greenyellow');
+      contador.classList.remove('red', 'orangered', 'seagreen');
+        break;
+      //   default:
+      //   contador.classList.add('seagreen');
+      //   contador.classList.remove('red', 'orangered', 'greenyellow');
+      // 
+     }
   }
