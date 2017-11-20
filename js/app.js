@@ -42,7 +42,6 @@ boton.addEventListener('click',function(event){
   }else {
        event.target.disabled = false;
   }
-
 });
 
 //para el crear el contador
@@ -52,40 +51,37 @@ var caracterMax= 140;
 area.addEventListener('keyup', Contador);
 function Contador(event) {
   if (event.target.value != '') {
-      //tweetBtnActive(true);
-     var caracterWrites= event.target.value.length;
+    botonAct(true);
+    var caracterWrites= event.target.value.length;
     var total = caracterMax - caracterWrites;      
     contador.textContent = total;
       
     colorCont(total);
     maxArea(event);
-    } else {
-        
-      //tweetBtnActive(false);
-     contador.textContent = caracterMax;
+  } else {
+    botonAct(false);
+    contador.textContent = caracterMax;
   }
 }
   
 //agregar funcion para cambair de color contador dependiendo de los caracteres.
 function colorCont(total) {
-    // if(total < 0) {
-    //   tweetBtnActive(false);
-    //   count.classList.add('red');
-    //   count.classList.remove('orangered', 'greenyellow', 'seagreen');
-    //   return;
-    // }
   switch (true) {
-    case (total < 0): // cuando se supera el max
+    case (total < 0): 
+        botonAct(false);
         contador.classList.add('red');
-        contador.classList.remove('blue','green');
+        contador.classList.remove('blue');
+        contador.classList.remove('green');
     break;
-    case (total < 11): // a 10 chars del max
+    case (total < 11): 
         contador.classList.add('blue');
-        contador.classList.remove('red','green');
+        contador.classList.remove('red');
+        contador.classList.remove('green');
     break;
-    case (total < 21): // a 20 chars del max
+    case (total < 21):
         contador.classList.add('green');
-        contador.classList.remove('red','blue');
+        contador.classList.remove('red');
+        contador.classList.remove('blue');
     break;
     default:
         contador.classList.remove('red', 'orange', 'green');
@@ -93,9 +89,16 @@ function colorCont(total) {
   }
 }
 
+//para agrandar tamaño de textarea si hay un enter.
 function maxArea(event) {
   if (event.keyCode === 13) {
       event.target.style.height = "4px";
       event.target.style.height = (event.target.scrollHeight) + "px";
   }
+}
+
+// Para activar o desactivar el butom de acuerdo al numero de caracteres
+var Boton = document.querySelector('.btn');
+function botonAct(centinel) {
+  Boton.disabled = !centinel;
 }
