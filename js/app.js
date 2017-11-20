@@ -26,54 +26,47 @@ var messages = document.getElementById('container-text');
 
 //funcion para publicar tweets
 boton.addEventListener('click',function(event){
-    event.preventDefault();
-    if(area.value != ''){
-       var parrafo = document.createElement('div');
-       var texto = document.createElement('p');
+  event.preventDefault();
+  if(area.value != ''){
+    var parrafo = document.createElement('div');
+    var texto = document.createElement('p');
       
-       texto.innerHTML = area.value + '<br> <br>' + '<i> Publicado: ' + moment().format('LTS') + '</i>';
-       parrafo.classList.add('outText');
+    texto.innerHTML = area.value + '<br> <br>' + '<i> Publicado: ' + moment().format('LTS') + '</i>';
+    parrafo.classList.add('outText');
        
-       parrafo.appendChild(texto);
-       messages.appendChild(parrafo);
+    parrafo.appendChild(texto);
+    messages.appendChild(parrafo);
 
-       area.value = '';
-       area.focus();
-    }else {
-          event.target.disabled = false;
-         }
+    area.value = '';
+    area.focus();
+  }else {
+       event.target.disabled = false;
+  }
+
 });
 
-//para el contador
+//para el crear el contador
 var contador = document.getElementById('contador');
 var caracterMax= 140;
 
 area.addEventListener('keyup', Contador);
 function Contador(event) {
-    // si no existe, se asigna MAX
-    // si existe se habilita el boton y se resta el max con la longitud
-    // if (event.target.value) {
-    if (event.target.value != '') {
+  if (event.target.value != '') {
       //tweetBtnActive(true);
-      var caracterWrites= event.target.value.length;
-      var total = caracterMax - caracterWrites;      
-      contador.textContent = total;
+     var caracterWrites= event.target.value.length;
+    var total = caracterMax - caracterWrites;      
+    contador.textContent = total;
       
-      colorCont(total);
-      //changeColor(total);
-      // checkEnters(event);
-      // checkLong(event);
-      /* if (event.keyCode === 13)
-        event.target.rows = event.target.rows + 1; */
+    colorCont(total);
+    maxArea(event);
     } else {
         
       //tweetBtnActive(false);
-      //contador.textContent = caracterMax;
-    }
+     contador.textContent = caracterMax;
+  }
 }
   
-
-  
+//agregar funcion para cambair de color contador dependiendo de los caracteres.
 function colorCont(total) {
     // if(total < 0) {
     //   tweetBtnActive(false);
@@ -81,22 +74,28 @@ function colorCont(total) {
     //   count.classList.remove('orangered', 'greenyellow', 'seagreen');
     //   return;
     // }
-    switch (true) {
-      case (total < 0): // cuando se supera el max
-      contador.classList.add('red');
-      contador.classList.remove('blue','green');
-        break;
-      case (total <= 10): // a 10 chars del max
-      contador.classList.add('blue');
-      contador.classList.remove('red','green');
-        break;
-      case (total <= 20): // a 20 chars del max
-      contador.classList.add('green');
-      contador.classList.remove('red','blue');
-        break;
-        default:
-      //   contador.classList.add('seagreen');
+  switch (true) {
+    case (total < 0): // cuando se supera el max
+        contador.classList.add('red');
+        contador.classList.remove('blue','green');
+    break;
+    case (total < 11): // a 10 chars del max
+        contador.classList.add('blue');
+        contador.classList.remove('red','green');
+    break;
+    case (total < 21): // a 20 chars del max
+        contador.classList.add('green');
+        contador.classList.remove('red','blue');
+    break;
+    default:
         contador.classList.remove('red', 'orange', 'green');
-      // 
-     }
+      
   }
+}
+
+function maxArea(event) {
+  if (event.keyCode === 13) {
+      event.target.style.height = "4px";
+      event.target.style.height = (event.target.scrollHeight) + "px";
+  }
+}
