@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0; 
 }
+
 .fondo {
     background-image: url('../assets/images/fond1.jpg');
     background-size: 1400px 800px;
@@ -18,7 +19,7 @@ h1 {
 }
 
 article {
-    margin: 7px 70px 0 70px;
+    margin: 7px 90px 0 70px;
     box-sizing: border-box;
 }
 
@@ -68,16 +69,19 @@ div.container2{
     margin-left: 28px;
     background-color: rgba(255, 255, 255, 0.507);
     width: 700px;
+    border-radius: 5px;
 }
 
 /*la etiqueta textarea*/
- textarea { 
-  height: 145px;
-  width: 700px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: none;
-  padding: 11px;
-  box-sizing: border-box;
+textarea { 
+    height: 100px;
+    width: 700px;
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 11px;
+    box-sizing: border-box;
 }
 
 .line {
@@ -98,12 +102,12 @@ div.container2{
 }
   
 .btn:hover {
-      background-color: #a09c9c;
+    background-color: #a09c9c;
 }
 
 .cont {
-      float: right;
-      font-size:21px; 
+    float: right;
+    font-size:21px; 
 }
 
 /*salida del mensaje  en la pantalla*/
@@ -113,7 +117,8 @@ div.container2{
     width:98%;
     height:auto;
     border:none;
-    margin-top: 7px;
+    padding:3px 14px;
+    margin-top: 6px;
     border-radius: 4px;
     box-sizing: border-box;
     overflow-wrap: break-word; /*crece el div dependiendo del texto*/
