@@ -31,14 +31,15 @@ div.container1 {
 .portada {
     width: auto;
     height: 105px;
-    background-color: rgba(0, 255, 255, 0.329);
+    background-image:url('../assets/images/portada.gif');
 }
+
 .img-perfil {
     position: relative;
     bottom: 28px;
     left: 14px;
     width: 100px;
-    border:3px solid rgba(255, 255, 255, 0.466);
+    border:3px solid rgba(255, 255, 255, 0.897);
     border-radius: 70px;
 }
 
@@ -51,7 +52,7 @@ div.container1 {
 }
 
 .text {
-    font-size: 21px;
+    font-size: 18px;
     color:rgb(90, 89, 89);
     display: inline-flex;
     position: relative;
@@ -60,7 +61,6 @@ div.container1 {
 }
 
 /*estilos del segundo div*/
-
 div.container2{
     position:relative;
     bottom :30px; 
@@ -69,6 +69,7 @@ div.container2{
     background-color: rgba(255, 255, 255, 0.507);
     width: 700px;
 }
+
 /*la etiqueta textarea*/
  textarea { 
   height: 145px;
@@ -94,16 +95,16 @@ div.container2{
     outline: none;
     padding: 12px 28px;
     margin: 21px 0 4px 10px ;;
-  }
+}
   
-  .btn:hover {
+.btn:hover {
       background-color: #a09c9c;
-  }
+}
 
-  .cont {
+.cont {
       float: right;
       font-size:21px; 
-  }
+}
 
 /*salida del mensaje  en la pantalla*/
 .outText{
@@ -118,21 +119,16 @@ div.container2{
     overflow-wrap: break-word; /*crece el div dependiendo del texto*/
   /*line-height: 20px; */
 }
-
-
-.seagreen {
-    color: seagreen;
-  }
   
-  .greenyellow {
-    color: greenyellow;
-  }
+.green {
+    color: rgba(175, 255, 47, 0.815);
+}
   
-  .orangered {
-    color: orangered;
-  }
+.blue {
+    color: rgba(0, 38, 255, 0.836);
+}
   
-  .red {
-    color: red;
-  }
+.red {
+    color: rgba(255, 0, 0, 0.87);
+}
 

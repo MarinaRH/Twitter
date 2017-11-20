@@ -84,19 +84,19 @@ function colorCont(total) {
     switch (true) {
       case (total < 0): // cuando se supera el max
       contador.classList.add('red');
-      contador.classList.remove('orangered', 'greenyellow', 'seagreen');
+      contador.classList.remove('blue','green');
         break;
       case (total <= 10): // a 10 chars del max
-      contador.classList.add('orangered');
-      contador.classList.remove('red', 'greenyellow', 'seagreen');
+      contador.classList.add('blue');
+      contador.classList.remove('red','green');
         break;
       case (total <= 20): // a 20 chars del max
-      contador.classList.add('greenyellow');
-      contador.classList.remove('red', 'orangered', 'seagreen');
+      contador.classList.add('green');
+      contador.classList.remove('red','blue');
         break;
-      //   default:
+        default:
       //   contador.classList.add('seagreen');
-      //   contador.classList.remove('red', 'orangered', 'greenyellow');
+        contador.classList.remove('red', 'orange', 'green');
       // 
      }
   }
